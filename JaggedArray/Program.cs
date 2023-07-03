@@ -21,6 +21,39 @@ namespace JaggedArray
                 }
                 Console.WriteLine();
             }
+
+            // Ahora haremos lo mismo pero con arreglos bidimensionales.
+
+            Console.WriteLine("-------------------------------------------");
+
+            int[][,] jaggedBi = new int[2][,] // Arreglo bidimensional con 2 valores.
+            {
+                new int[,] // Primer array.
+                {
+                    { 8, 6 },
+                    { 4, 2 },
+                    { 3, 7 }
+                },
+                new int[,] // Segundo array.
+                {
+                    { 8, 2, 1 },
+                    { 7, 5, 3 }
+                }
+            };
+
+            // Se debe recorrer un array por filas y columnas mediante un ciclo for.
+
+            for (int i = 0; i < jaggedBi.Length; i++) // Filas.
+            {
+                for (int j = 0; j < jaggedBi[i].GetLength(0); j++) // Columnas.
+                {
+                    for (int k = 0; k < jaggedBi[i].GetLength(1); k++) // Array combinado.
+                    {
+                        Console.WriteLine($"{jaggedBi[i][j,k]}"); // Se crea un jagged array con arrays bidimensionales.
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
